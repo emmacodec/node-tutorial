@@ -13,3 +13,21 @@ app.use(express.json());
 
 // static files
 app.use(express.static('public'));
+
+// setting template engine 
+app.use(expressLayout);
+app.set('layout', './layouts/main');
+app.set('view engine', 'ejs');
+
+// setting routes
+app.get('/', function(req, res) {
+    const locals = {
+        title: 'NodeJs practice',
+        description: 'Free NodeJs notes'
+    }
+    res.render('index', locals);
+});
+
+app.listen(port, () => {
+    console.log(`App listening on port ${port}`);
+})
