@@ -19,14 +19,8 @@ app.use(expressLayout);
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
-// setting routes
-app.get('/', function(req, res) {
-    const locals = {
-        title: 'NodeJs practice',
-        description: 'Free NodeJs notes'
-    }
-    res.render('index', locals);
-});
+// Routes
+app.use('/', require('./server/routes/index'));
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
