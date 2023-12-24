@@ -1,6 +1,6 @@
 /**
  * Get /
- * Homepenu
+ * Homepage
  */
 
 exports.homepage = async (req, res) => {
