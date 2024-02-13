@@ -32,4 +32,4 @@ app.get('*', function(res, req) {
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
-})
+});
